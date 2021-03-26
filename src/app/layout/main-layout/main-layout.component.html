@@ -1,0 +1,16 @@
+<div>
+  <!--  <app-loader></app-loader>-->
+  <app-header (menuToggled)="toggleMenu()"></app-header>
+  <mat-drawer-container>
+
+    <mat-drawer mode="side" [opened]="opened$ | async">
+      <!--      <app-sidebar></app-sidebar>-->
+      <app-menu-item [menu]="menuList"></app-menu-item>
+
+    </mat-drawer>
+
+    <mat-drawer-content [class.margin-left]="opened$ | async">
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>

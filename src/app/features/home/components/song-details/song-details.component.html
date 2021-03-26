@@ -1,0 +1,28 @@
+<mat-list>
+  <div mat-subheader>Song Details</div>
+  <mat-list-item>
+    <mat-icon mat-list-icon>title</mat-icon>
+    <div mat-line>Title: {{event.title}}</div>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon mat-list-icon>library_music</mat-icon>
+    <div mat-line>Artist:
+      <span *ngFor="let artist of event.artist; let i = index">
+          {{artist}} {{i === event.artist.length - 1 ? '' : 'ft&nbsp;' }}
+          </span>
+    </div>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon mat-list-icon>album</mat-icon>
+    <div mat-line>Album: {{event.album}}</div>
+  </mat-list-item>
+  <mat-list-item>
+    <mat-icon mat-list-icon>date_range</mat-icon>
+    <div mat-line>Release Date: {{event.start | date: 'y-MM-dd'}}</div>
+  </mat-list-item>
+</mat-list>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="doAction(event)" mat-flat-button color="warn" type="submit">Delete</button>
+  <button mat-button (click)="closeDialog()" color="primary" type="button">Close</button>
+</mat-dialog-actions>

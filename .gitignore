@@ -17,7 +17,7 @@ speed-measure-plugin*.json
 # IDEs and editors
 /.idea
 .project
-.classpath
+.classpat
 .c9/
 *.launch
 .settings/
@@ -41,6 +41,3 @@ yarn-error.log
 testem.log
 /typings
 
-# System Files
-.DS_Store
-Thumbs.db

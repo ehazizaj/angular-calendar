@@ -1,0 +1,43 @@
+{
+  "songs": [
+    {
+      "artist": [
+        "Eminem",
+        "Rihanna"
+      ],
+      "title": "Love the way you lie",
+      "album": "Loose yourself",
+      "release_date": "2021-03-11",
+      "id": 1
+    },
+    {
+      "artist": [
+        "Armin van Buuren",
+        "Nicky Romero",
+        "Ifimay"
+      ],
+      "title": "I Need You to Know",
+      "album": "I Need You to Know",
+      "release_date": "2021-03-09",
+      "id": 2
+    },
+    {
+      "artist": [
+        "Drake"
+      ],
+      "title": "God's plan",
+      "album": "Explicit",
+      "release_date": "2021-03-12",
+      "id": 4
+    },
+    {
+      "artist": [
+        "Jay-z"
+      ],
+      "title": "New York",
+      "album": "Test",
+      "release_date": "2021-03-17",
+      "id": 5
+    }
+  ]
+}

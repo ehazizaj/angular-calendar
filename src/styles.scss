@@ -1,1 +1,201 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+//@import "~bootstrap/scss/bootstrap-grid.scss";
+
+html, body {
+  //height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+* {
+  outline: none;
+
+  &::-webkit-scrollbar {
+    width: 6px !important;
+    height: 6px !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .2);
+  }
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+button {
+  height: 51px;
+  max-height: 51px;
+}
+
+
+.w-100 {
+  width: 100%;
+}
+
+.cp {
+  cursor: pointer;
+}
+
+
+/* Layout */
+
+.feature-header {
+  background: white;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ececec;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 0 4px 2px #ececec;
+
+  // Make feature header sticky
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  h1, h2, p {
+    margin-bottom: 0;
+  }
+
+  p {
+    color: #848484;
+  }
+
+  .feature-icon {
+    font-size: 35px;
+    width: 35px;
+    height: auto;
+  }
+}
+
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center!important;
+}
+
+.empty-container {
+  flex-direction: column;
+  text-align: center;
+
+  span {
+    font-size: 20px;
+  }
+
+  mat-icon {
+    font-size: 50px;
+    width: 50px;
+    height: auto;
+  }
+}
+
+
+/* Alerts */
+
+.alert {
+  border-radius: 4px;
+  padding: 15px;
+  margin: 5px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+
+  &.error {
+    background: rgb(255 0 0 / 15%);
+    color: #d10000;
+  }
+
+  &.warning {
+    background: #ffaf6870;
+    color: #d16200;
+  }
+
+  .mat-icon {
+    cursor: pointer;
+    transition: 0.15s all;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+
+}
+
+
+th.mat-header-cell {
+  font-size: 14px;
+  font-weight: 500;
+  color: #353535;
+}
+
+.feature-icon {
+  color: #0E2660;
+}
+
+.box {
+  text-align: center;
+  cursor: pointer;
+  color: #434343;
+  transition: 0.15s all;
+  padding: 35px 10px;
+
+  .mat-icon {
+    font-size: 50px;
+    width: 50px;
+    height: auto;
+    padding-bottom: 25px;
+    transition: 0.15s all;
+  }
+
+  &:hover {
+    color: black;
+    transform: translateY(-5px);
+
+    .mat-icon {
+      color: black;
+      transform: scale(1.1);
+      //transform: translateY(-5px);
+    }
+  }
+
+}
+
+.center {
+  margin: 100px 0 !important;
+  height: auto !important;
+}
+
+/* Used on table rows */
+.hoverable {
+  transition: 0.2s all;
+  cursor: pointer;
+
+  &:hover {
+    background: lightgrey;
+  }
+}
+

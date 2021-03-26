@@ -1,0 +1,88 @@
+<div class="p-4">
+
+  <div class="mt-4">
+
+    <mat-card class="mat-elevation-z2 mb-4">
+      <mat-card-content>
+
+        <div class="row text-center">
+          <div class="col-md-4">
+            <div class="btn-group">
+              <button
+                mat-flat-button
+                translucent
+                color="#2752FF"
+                class="ml-3 px-3"
+                matTooltip="Previous Month"
+                mwlCalendarPreviousView
+                [view]="view"
+                [(viewDate)]="viewDate"
+                >
+                <mat-icon>keyboard_arrow_left</mat-icon>
+              </button>
+              <button
+                mat-flat-button
+                translucent
+                color="#f52525"
+                class="ml-3 px-3"
+                matTooltip="Todays Date"
+                mwlCalendarToday
+                [(viewDate)]="viewDate">
+                Today
+              </button>
+              <button
+                mat-flat-button
+                translucent
+                color="#2752FF"
+                class="ml-3 px-3"
+                matTooltip="Next Month"
+                mwlCalendarNextView
+                [view]="view"
+                [(viewDate)]="viewDate"
+                >
+                <mat-icon>keyboard_arrow_right</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-4 month">
+            <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+          </div>
+          <div class="col-md-4">
+            <div class="btn-group">
+              <button mat-flat-button translucent color="#39BF4D" class="ml-3 px-3" matTooltip="Monthly View"
+                      (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month"
+              >Monthly
+                <mat-icon>calendar_view_month</mat-icon>
+              </button>
+              <button mat-flat-button translucent color="#39BF4D" class="ml-3 px-3" matTooltip="Weekly View"
+                      (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week"
+              >Weekly
+                <mat-icon>calendar_view_week</mat-icon>
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr>
+        <div [ngSwitch]="view">
+          <mwl-calendar-month-view
+            *ngSwitchCase="CalendarView.Month"
+            [viewDate]="viewDate"
+            [events]="events"
+            [refresh]="refresh"
+            (dayClicked)="dayClicked($event.day)"
+            (eventClicked)="eventClicked($event.event)"
+            (eventTimesChanged)="eventTimesChanged($event)">
+          </mwl-calendar-month-view>
+          <mwl-calendar-week-view
+            *ngSwitchCase="CalendarView.Week"
+            [viewDate]="viewDate"
+            [events]="events"
+            [refresh]="refresh"
+            (eventClicked)="eventClicked($event.event)"
+            (eventTimesChanged)="eventTimesChanged($event)">
+          </mwl-calendar-week-view>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
